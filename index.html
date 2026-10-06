@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rahul | Engineering Student & Future Developer</title>
+
+  <meta
+    name="description"
+    content="Rahul is a 2nd year engineering student passionate about technology, coding, Git, and learning new skills."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b1120;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------- NAVBAR ---------- */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 8%;
+
+      background: rgba(11, 17, 32, 0.8);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .logo span {
+      color: #ffffff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #cbd5e1;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 120px 8% 80px;
+
+      background:
+        radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.18), transparent 30%),
+        radial-gradient(circle at 85% 70%, rgba(139, 92, 246, 0.15), transparent 30%);
+    }
+
+    .hero-content {
+      max-width: 1000px;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 16px;
+      margin-bottom: 25px;
+
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 50px;
+
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 30px);
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #94a3b8;
+      font-size: 17px;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .primary {
+      background: #38bdf8;
+      color: #06111d;
+    }
+
+    .primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+    }
+
+    .secondary {
+      border: 1px solid #334155;
+      color: #e2e8f0;
+    }
+
+    .secondary:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    /* ---------- COMMON ---------- */
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #94a3b8;
+    }
+
+    /* ---------- ABOUT ---------- */
+
+    .about {
+      background: #0f172a;
+    }
+
+    .about-container {
+      max-width: 1000px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: #94a3b8;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    .about-card {
+      padding: 35px;
+      border-radius: 20px;
+
+      background: linear-gradient(
+        145deg,
+        rgba(56, 189, 248, 0.08),
+        rgba(139, 92, 246, 0.08)
+      );
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .about-card h3 {
+      margin-bottom: 20px;
+    }
+
+    .about-card p {
+      color: #94a3b8;
+    }
+
+    /* ---------- SKILLS ---------- */
+
+    .skills-container {
+      max-width: 1000px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      padding: 30px;
+      border-radius: 18px;
+
+      background: #111c31;
+      border: 1px solid #1e293b;
+
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-7px);
+      border-color: #38bdf8;
+    }
+
+    .skill-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* ---------- JOURNEY ---------- */
+
+    .journey {
+      background: #0f172a;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: auto;
+      border-left: 2px solid #1e3a5f;
+      padding-left: 35px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+
+      width: 13px;
+      height: 13px;
+
+      border-radius: 50%;
+      background: #38bdf8;
+
+      left: -43px;
+      top: 5px;
+
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+    }
+
+    .timeline-item span {
+      color: #38bdf8;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .timeline-item h3 {
+      margin: 5px 0;
+    }
+
+    .timeline-item p {
+      color: #94a3b8;
+    }
+
+    /* ---------- PROJECTS ---------- */
+
+    .projects-container {
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      padding: 28px;
+      border-radius: 18px;
+
+      background: #111827;
+      border: 1px solid #1e293b;
+
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      border-color: #8b5cf6;
+    }
+
+    .project-number {
+      color: #8b5cf6;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .project-card h3 {
+      margin: 12px 0;
+    }
+
+    .project-card p {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .project-link {
+      color: #38bdf8;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* ---------- GOALS ---------- */
+
+    .goals {
+      background: #0f172a;
+    }
+
+    .goals-container {
+      max-width: 900px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .goal {
+      padding: 25px;
+      background: #111c31;
+      border-radius: 16px;
+      border: 1px solid #1e293b;
+    }
+
+    .goal h3 {
+      margin-bottom: 8px;
+    }
+
+    .goal p {
+      color: #94a3b8;
+    }
+
+    /* ---------- CONTACT ---------- */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+      padding: 50px 30px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.1),
+          rgba(139, 92, 246, 0.1)
+        );
+
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-box h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #94a3b8;
+      margin-bottom: 25px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      padding: 30px 8%;
+      text-align: center;
+
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: #38bdf8;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      section {
+        padding: 75px 6%;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-container {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .projects-container {
+        grid-template-columns: 1fr;
+      }
+
+      .goals-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">
+      Rahul<span>.</span>
+    </div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="tag">
+        🚀 2nd Year Engineering Student
+      </div>
+
+      <h1>
+        Hi, I'm <span>Rahul</span>
+      </h1>
+
+      <h2>
+        Learning Today. Building Tomorrow.
+      </h2>
+
+      <p>
+        I'm an engineering student passionate about technology, coding,
+        Git, and exploring new ideas. I'm currently building my skills
+        one step at a time and working toward becoming a better developer.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn primary">
+          View My Journey
+        </a>
+
+        <a href="#contact" class="btn secondary">
+          Let's Connect
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>A little about who I am and what I'm working toward.</p>
+    </div>
+
+    <div class="about-container">
+
+      <div class="about-text">
+
+        <h3>Curious Mind. Consistent Learner.</h3>
+
+        <p>
+          I'm <span class="highlight">Rahul</span>, a 2nd year engineering
+          student who enjoys learning about computers, programming and
+          modern technology.
+        </p>
+
+        <p>
+          I believe that becoming good at technology isn't about knowing
+          everything. It's about staying curious, learning consistently,
+          building projects and improving every day.
+        </p>
+
+        <p>
+          Right now, I'm focusing on strengthening my fundamentals and
+          discovering the areas of technology that excite me the most.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <h3>🎯 My Current Focus</h3>
+
+        <p>
+          • Improving programming fundamentals
+        </p>
+
+        <p>
+          • Learning Git & GitHub
+        </p>
+
+        <p>
+          • Building small projects
+        </p>
+
+        <p>
+          • Exploring web development
+        </p>
+
+        <p>
+          • Learning something new every day
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="section-title">
+      <h2>What I'm Learning</h2>
+      <p>Skills I'm currently developing.</p>
+    </div>
+
+    <div class="skills-container">
+
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <h3>Programming</h3>
+        <p>
+          Building strong programming fundamentals and improving
+          problem-solving skills.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>
+          Exploring HTML, CSS, JavaScript and learning how modern
+          websites are built.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🔧</div>
+        <h3>Git & GitHub</h3>
+        <p>
+          Learning version control, repositories, commits, branches
+          and collaborative development.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🧠</div>
+        <h3>Problem Solving</h3>
+        <p>
+          Practicing logical thinking and learning how to break
+          complex problems into smaller pieces.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">📚</div>
+        <h3>Continuous Learning</h3>
+        <p>
+          Exploring new technologies and continuously improving
+          my technical knowledge.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">🚀</div>
+        <h3>Future Skills</h3>
+        <p>
+          Exploring AI, software development, cloud technologies
+          and other emerging areas.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- JOURNEY -->
+
+  <section class="journey" id="journey">
+
+    <div class="section-title">
+      <h2>My Learning Journey</h2>
+      <p>Progress over perfection.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <span>NOW</span>
+
+        <h3>🎓 2nd Year Engineering</h3>
+
+        <p>
+          Building my technical foundation and exploring different
+          areas of computer science and engineering.
+        </p>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <span>CURRENTLY LEARNING</span>
+
+        <h3>💻 Coding & Web Development</h3>
+
+        <p>
+          Learning programming concepts, creating websites and
+          experimenting with small projects.
+        </p>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <span>RECENTLY STARTED</span>
+
+        <h3>🔀 Git & GitHub</h3>
+
+        <p>
+          Learning how developers manage code, track changes and
+          collaborate using Git and GitHub.
+        </p>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <span>COMING NEXT</span>
+
+        <h3>🚀 Build More Projects</h3>
+
+        <p>
+          My goal is to turn what I learn into real projects and
+          gradually build a strong developer portfolio.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="section-title">
+      <h2>My Projects</h2>
+      <p>Small steps today can become big things tomorrow.</p>
+    </div>
+
+    <div class="projects-container">
+
+      <div class="project-card">
+
+        <div class="project-number">
+          PROJECT 01
+        </div>
+
+        <h3>Personal Portfolio</h3>
+
+        <p>
+          A responsive portfolio website created to showcase my
+          learning journey, skills and future projects.
+        </p>
+
+        <a href="#" class="project-link">
+          View Project →
+        </a>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <div class="project-number">
+          PROJECT 02
+        </div>
+
+        <h3>Learning Projects</h3>
+
+        <p>
+          A collection of small experiments and projects created
+          while learning programming and web development.
+        </p>
+
+        <a href="#" class="project-link">
+          Coming Soon →
+        </a>
+
+      </div>
+
+
+      <div class="project-card">
+
+        <div class="project-number">
+          PROJECT 03
+        </div>
+
+        <h3>Future Project</h3>
+
+        <p>
+          I'm currently learning and looking for ideas that can
+          turn into useful real-world applications.
+        </p>
+
+        <a href="#" class="project-link">
+          Stay Tuned →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GOALS -->
+
+  <section class="goals">
+
+    <div class="section-title">
+      <h2>Where I'm Going</h2>
+      <p>My goals for the future.</p>
+    </div>
+
+    <div class="goals-container">
+
+      <div class="goal">
+        <h3>🎯 Become a Better Developer</h3>
+        <p>
+          Strengthen my fundamentals and become confident at
+          building real applications.
+        </p>
+      </div>
+
+      <div class="goal">
+        <h3>🌎 Build Real Projects</h3>
+        <p>
+          Create projects that solve problems and give me
+          practical development experience.
+        </p>
+      </div>
+
+      <div class="goal">
+        <h3>🤖 Explore AI & Technology</h3>
+        <p>
+          Learn about modern technologies and understand how
+          AI is changing software development.
+        </p>
+      </div>
+
+      <div class="goal">
+        <h3>🚀 Keep Growing</h3>
+        <p>
+          Keep learning, experimenting, making mistakes and
+          improving every single day.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="contact-box">
+
+      <h2>Let's Connect 👋</h2>
+
+      <p>
+        I'm always interested in learning, building and connecting
+        with people who love technology.
+      </p>
+
+      <div class="buttons">
+
+        <!-- Replace these # links with your real profiles -->
+
+        <a href="#" class="btn primary">
+          GitHub
+        </a>
+
+        <a href="#" class="btn secondary">
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 <span>Rahul</span>. Built with curiosity, code & coffee ☕
+    </p>
+
+  </footer>
+
+</body>
+</html>
